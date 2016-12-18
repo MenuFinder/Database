@@ -145,7 +145,7 @@ CREATE TABLE menu (
     description character varying(200),
     price double precision,
     score double precision,
-    visible bit(1)
+    visible boolean
 );
 
 
