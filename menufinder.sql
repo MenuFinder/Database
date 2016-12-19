@@ -22,7 +22,8 @@ CREATE TABLE account (
     id character varying(50) NOT NULL,
     password character varying(50) NOT NULL,
     type character varying(25) NOT NULL,
-    token character varying(250)
+    token character varying(250),
+    email character varying(150)
 );
 
 
