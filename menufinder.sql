@@ -200,7 +200,8 @@ CREATE TABLE restaurant (
     country character varying(75),
     email character varying(75),
     phone character varying(30),
-    account character varying(50) NOT NULL
+    account character varying(50) NOT NULL,
+    score double precision
 );
 
 
