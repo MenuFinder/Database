@@ -472,6 +472,9 @@ SELECT pg_catalog.setval('review_id_seq', 1, false);
 -- Data for Name: reviewtype; Type: TABLE DATA; Schema: public; Owner: -
 --
 
+INSERT INTO reviewtype VALUES ('item');
+INSERT INTO reviewtype VALUES ('menu');
+INSERT INTO reviewtype VALUES ('restaurant');
 
 
 --
