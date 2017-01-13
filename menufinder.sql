@@ -599,7 +599,7 @@ CREATE INDEX fki_review_user ON review USING btree (account);
 --
 
 ALTER TABLE ONLY item
-    ADD CONSTRAINT fk_item_restaurant FOREIGN KEY (restaurant) REFERENCES restaurant(id);
+    ADD CONSTRAINT fk_item_restaurant FOREIGN KEY (restaurant) REFERENCES restaurant(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -608,7 +608,7 @@ ALTER TABLE ONLY item
 --
 
 ALTER TABLE ONLY itemrating
-    ADD CONSTRAINT fk_itemrating_item FOREIGN KEY (item) REFERENCES item(id);
+    ADD CONSTRAINT fk_itemrating_item FOREIGN KEY (item) REFERENCES item(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -617,7 +617,7 @@ ALTER TABLE ONLY itemrating
 --
 
 ALTER TABLE ONLY itemrating
-    ADD CONSTRAINT fk_itemrating_user FOREIGN KEY (account) REFERENCES account(id);
+    ADD CONSTRAINT fk_itemrating_user FOREIGN KEY (account) REFERENCES account(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -626,7 +626,7 @@ ALTER TABLE ONLY itemrating
 --
 
 ALTER TABLE ONLY menu
-    ADD CONSTRAINT fk_menu_restaurant FOREIGN KEY (restaurant) REFERENCES restaurant(id);
+    ADD CONSTRAINT fk_menu_restaurant FOREIGN KEY (restaurant) REFERENCES restaurant(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -635,7 +635,7 @@ ALTER TABLE ONLY menu
 --
 
 ALTER TABLE ONLY menuitem
-    ADD CONSTRAINT fk_menuitem_item FOREIGN KEY (item) REFERENCES item(id);
+    ADD CONSTRAINT fk_menuitem_item FOREIGN KEY (item) REFERENCES item(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -644,7 +644,7 @@ ALTER TABLE ONLY menuitem
 --
 
 ALTER TABLE ONLY menuitem
-    ADD CONSTRAINT fk_menuitem_itemcategory FOREIGN KEY (itemcategory) REFERENCES itemcategory(id);
+    ADD CONSTRAINT fk_menuitem_itemcategory FOREIGN KEY (itemcategory) REFERENCES itemcategory(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -653,7 +653,7 @@ ALTER TABLE ONLY menuitem
 --
 
 ALTER TABLE ONLY menuitem
-    ADD CONSTRAINT fk_menuitem_menu FOREIGN KEY (menu) REFERENCES menu(id);
+    ADD CONSTRAINT fk_menuitem_menu FOREIGN KEY (menu) REFERENCES menu(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -662,7 +662,7 @@ ALTER TABLE ONLY menuitem
 --
 
 ALTER TABLE ONLY restaurant
-    ADD CONSTRAINT fk_restaurant_user FOREIGN KEY (account) REFERENCES account(id);
+    ADD CONSTRAINT fk_restaurant_user FOREIGN KEY (account) REFERENCES account(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -671,7 +671,7 @@ ALTER TABLE ONLY restaurant
 --
 
 ALTER TABLE ONLY review
-    ADD CONSTRAINT fk_review FOREIGN KEY (parent_type) REFERENCES reviewtype(id);
+    ADD CONSTRAINT fk_review FOREIGN KEY (parent_type) REFERENCES reviewtype(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -680,7 +680,7 @@ ALTER TABLE ONLY review
 --
 
 ALTER TABLE ONLY review
-    ADD CONSTRAINT fk_review_user FOREIGN KEY (account) REFERENCES account(id);
+    ADD CONSTRAINT fk_review_user FOREIGN KEY (account) REFERENCES account(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -689,7 +689,7 @@ ALTER TABLE ONLY review
 --
 
 ALTER TABLE ONLY account
-    ADD CONSTRAINT fk_user_type FOREIGN KEY (type) REFERENCES accounttype(id);
+    ADD CONSTRAINT fk_user_type FOREIGN KEY (type) REFERENCES accounttype(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -698,7 +698,7 @@ ALTER TABLE ONLY account
 --
 
 ALTER TABLE ONLY usersubscription
-    ADD CONSTRAINT fk_usersubscription_account FOREIGN KEY (account) REFERENCES account(id);
+    ADD CONSTRAINT fk_usersubscription_account FOREIGN KEY (account) REFERENCES account(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -707,7 +707,7 @@ ALTER TABLE ONLY usersubscription
 --
 
 ALTER TABLE ONLY usersubscription
-    ADD CONSTRAINT fk_usersubscription_restaurant FOREIGN KEY (restaurant) REFERENCES restaurant(id);
+    ADD CONSTRAINT fk_usersubscription_restaurant FOREIGN KEY (restaurant) REFERENCES restaurant(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 -- Completed on 2016-12-13 17:24:33 CET
